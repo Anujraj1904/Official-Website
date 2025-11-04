@@ -12,7 +12,7 @@ module.exports.registeremployee = async (req, res, next) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { fullname, email, password, vehicle } = req.body;
+  const { fullname, email, password } = req.body;
 
   const isemployeeAlreadyExist = await employeeModel.findOne({ email });
 
@@ -27,11 +27,7 @@ module.exports.registeremployee = async (req, res, next) => {
     firstname: fullname.firstname,
     lastname: fullname.lastname,
     email,
-    password: hashedPassword,
-    color: vehicle.color,
-    plate: vehicle.plate,
-    capacity: vehicle.capacity,
-    vehicleType: vehicle.vehicleType
+    password: hashedPassword
   });
 
   const token = employee.generateAuthToken();
