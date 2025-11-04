@@ -4,10 +4,10 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-// const { errorHandler } = require('./middleware/errorHandler');
+const { errorHandler } = require('./middleware/errorHandler');
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/user.routes');
-const employeeRoutes = require('./routes/employee');
+const employeeRoutes = require('./routes/employee.routes');
 
 // const userRoutes = require('./routes/user.routes');
 
@@ -30,7 +30,7 @@ app.use('/users', userRoutes);
 app.use('/employee', employeeRoutes);
 
 // Error handler
-// app.use(errorHandler);
+app.use(errorHandler);
 
 
 module.exports = app;
