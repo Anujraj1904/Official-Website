@@ -160,7 +160,7 @@ Keep the site dynamic and informative.
 
 ---
 
-### 🔹 `components/cta/` — 🚀 Call-To-Action
+### 🔹 `components/contact/` — 🚀 Call-To-Action
 
 Used to encourage user engagement or lead capture.
 
