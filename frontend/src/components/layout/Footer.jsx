@@ -38,7 +38,7 @@ const Footer = () => {
                 aria-label="Subscribe"
                 className="bg-[#222] border border-gray-700 px-3 sm:px-4 py-2 rounded-r-md hover:bg-gray-800 text-sm"
               >
-                ➤
+              ➤
               </button>
             </form>
 
@@ -53,7 +53,7 @@ const Footer = () => {
           {/* Right columns (col span 7 on md+) */}
           <div className="md:col-span-7">
             {/* Responsive inner grid: 1 col (sm) -> 2 cols (sm) -> 3 logical columns on lg */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10">
               {/* LEFT column (Work Inquiry + Address) */}
               <div className="space-y-6">
                 <div>
@@ -68,46 +68,47 @@ const Footer = () => {
                   <p className="text-sm text-gray-300">90001, Nigeria</p>
                 </div>
               </div>
+              <div className="flex flex-col">
+                {/* MIDDLE column (Open Positions) */}
+                <div className="space-y-6">
+                  <div>
+                    <h5 className="text-sm font-semibold text-white mb-2">Open Position</h5>
+                    <p className="text-sm text-gray-300">Junior 3D Designer (Intern)</p>
+                    <p className="text-sm text-gray-300 mt-1">Illustrator (Remote)</p>
+                  </div>
 
-              {/* MIDDLE column (Open Positions) */}
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-sm font-semibold text-white mb-2">Open Position</h5>
-                  <p className="text-sm text-gray-300">Junior 3D Designer (Intern)</p>
-                  <p className="text-sm text-gray-300 mt-1">Illustrator (Remote)</p>
+                  {/* On small screens keep links below; we keep this block for consistent height */}
+                  <div className="hidden lg:block" aria-hidden />
                 </div>
 
-                {/* On small screens keep links below; we keep this block for consistent height */}
-                <div className="hidden lg:block" aria-hidden />
-              </div>
+                {/* RIGHT column (Links) — right-aligned on lg */}
+                <div className="lg:self-start lg:justify-self-end pt-2">
+                  <h5 className="text-sm font-semibold text-white mb-3">Links</h5>
 
-              {/* RIGHT column (Links) — right-aligned on lg */}
-              <div className="lg:self-start lg:justify-self-end">
-                <h6 className="text-xs font-semibold text-white mb-3">Links</h6>
+                  {/* Two-column link list collapses to single column on xs */}
+                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-10 gap-y-5 sm:gap-x-6">
+                    <ul className="text-sm text-gray-300">
+                      <li>
+                        <a href="/terms" className="hover:underline whitespace-nowrap">
+                          Terms &amp; Conditions
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/privacy" className="hover:underline whitespace-nowrap">
+                          Privacy Policy
+                        </a>
+                      </li>
+                    </ul>
 
-                {/* Two-column link list collapses to single column on xs */}
-                <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-10 gap-y-2 sm:gap-x-6">
-                  <ul className="text-sm text-gray-300 space-y-1">
-                    <li>
-                      <a href="/terms" className="hover:underline whitespace-nowrap">
-                        Terms &amp; Conditions
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/privacy" className="hover:underline whitespace-nowrap">
-                        Privacy Policy
-                      </a>
-                    </li>
-                  </ul>
-
-                  <ul className="text-sm text-gray-300 space-y-1">
-                    <li>
-                      <a href="/news" className="hover:underline">News</a>
-                    </li>
-                    <li>
-                      <a href="/pricing" className="hover:underline">Pricings</a>
-                    </li>
-                  </ul>
+                    <ul className="text-sm text-gray-300">
+                      <li>
+                        <a href="/news" className="hover:underline">News</a>
+                      </li>
+                      <li>
+                        <a href="/pricing" className="hover:underline">Pricings</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
