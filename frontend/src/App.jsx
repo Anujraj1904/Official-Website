@@ -1,21 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
+// import { heroData } from "./data/homeData";
 
 // Layout components
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
 // Page sections
-// import Hero from "./components/hero/Hero";
+import Hero from "./components/hero/Hero";
 // import FeaturedWorksGrid from "./components/works/FeaturedWorksGrid";
 // import Services from "./components/services/Services";
 // import PricingCards from "./components/pricing/PricingCards";
-// import FaqAccordion from "./components/faq/FaqAccordion";
-// import ArticlesPreview from "./components/articles/ArticlesPreview";
+import FaqAccordion from "./components/faq/FaqAccordion";
+import ArticlesPreview from "./components/articles/ArticlesPreview";
 // import ContactCta from "./components/contact/ContactCta";
 
 // Sample data (can later come from API)
-// import { heroData, worksData, servicesData, pricingPlans, faqs, articles } from "./data/homeData";
+// import { worksData, servicesData, pricingPlans, faqs, articles } from "./data/homeData";
 
 const App = () => {
   return (
@@ -25,14 +26,8 @@ const App = () => {
       <Header />
 
       {/* Hero Section */}
-      {/* <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-      >
-        <Hero {...heroData} />
-      </motion.section> */}
-
+      <Hero />
+      
       {/* Featured Works */}
       {/* <section id="featured" className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-4">
@@ -64,24 +59,10 @@ const App = () => {
       </section> */}
 
       {/* FAQ Section */}
-      {/* <section id="faq" className="py-24 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
-            Ask Us <span className="text-yellow-400 italic">Anything</span>
-          </h2>
-          <FaqAccordion items={faqs} />
-        </div>
-      </section> */}
+      <FaqAccordion />
 
       {/* Articles / Blog Section */}
-      {/* <section id="articles" className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
-            Our <span className="text-yellow-400 italic">Articles</span>
-          </h2>
-          <ArticlesPreview articles={articles} />
-        </div>
-      </section> */}
+      <ArticlesPreview />
 
       {/* Final Call-to-Action */}
       {/* <motion.section

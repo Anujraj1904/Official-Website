@@ -1,6 +1,6 @@
 // src/components/layout/Footer.jsx
 import React from "react";
-import Banner from "../../assets/Banner.jpeg";
+import Banner from "/images/Banner.jpeg";
 
 const Footer = () => {
   return (

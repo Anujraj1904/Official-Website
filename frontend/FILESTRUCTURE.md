@@ -26,7 +26,7 @@ Low-level reusable building blocks used across the entire site.
 **Typical files:**
 - `Button.jsx` — Custom button component with Tailwind variants (`primary`, `secondary`, `ghost`).
 - `Icon.jsx` — Wrapper for Lucide or custom SVG icons.
-- `Card.jsx` — Basic card layout (shadow, rounded corners).
+- `ArticleCard.jsx` — Basic card layout for Article card section (shadow, rounded corners).
 - `Modal.jsx` — Generic modal with backdrop and close handler.
 - `Badge.jsx` — Small label or tag element.
 - `Input.jsx` — Generic text/email input with validation styles.
