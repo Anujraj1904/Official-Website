@@ -9,10 +9,11 @@ import Footer from "./components/layout/Footer";
 // Page sections
 import Hero from "./components/hero/Hero";
 // import FeaturedWorksGrid from "./components/works/FeaturedWorksGrid";
-import Services from "./components/services/Services";
+import ServicesPlan from "./components/servicesPlan/ServicesPlan";
 import PricingCards from "./components/pricing/PricingSection";
 import FaqAccordion from "./components/faq/FaqAccordion";
 import ArticlesPreview from "./components/articles/ArticlesPreview";
+import Testimonials from "./components/testimonials/Testimonials";
 // import ContactCta from "./components/contact/ContactCta";
 
 // Sample data (can later come from API)
@@ -38,8 +39,10 @@ const App = () => {
         </div>
       </section> */}
 
+      <Testimonials />
+
       {/* Services Section */}
-      <Services />
+      <ServicesPlan />
 
       {/* Pricing / Subscription Section */}
       <PricingCards />

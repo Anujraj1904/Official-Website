@@ -38,6 +38,8 @@ const PricingCard = ({ plan }) => {
       <button className="w-full bg-yellow-400 text-black font-medium py-2 rounded-lg hover:bg-yellow-300 transition">
         Pick this package &gt;
       </button>
+
+      
     </div>
   );
 };

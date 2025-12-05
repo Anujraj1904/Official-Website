@@ -1,0 +1,38 @@
+/* Make sure Swiper wrapper and slides don't hide content */
+.testimonials-swiper,
+.testimonials-swiper .swiper-wrapper {
+  width: 100%;
+}
+
+/* ensure slide dimensions are driven by content, not collapsed */
+.slide-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible !important;
+  width: 100% !important;
+}
+
+/* inner wrapper provides padding but ensures full width */
+.slide-inner {
+  width: 100%;
+  max-width: 760px;
+  /* adjust as needed */
+  box-sizing: border-box;
+}
+
+/* Make sure card is visible (z-index) */
+.testimonial-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep pagination visible and styled */
+.swiper-pagination-bullet {
+  background: #777;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #facc15;
+}

@@ -9,6 +9,11 @@ const PricingSection = () => {
           <PricingCard key={plan.id} plan={plan} />
         ))}
       </div>
+      
+      <div className="mt-8 text-center text-gray-400 flex justify-center items-center space-x-2">
+        <p>Can't find your plan! Want to setup a tailor-plan for only you? </p>
+        <a href="/contact" className="text-yellow-400 underline"> Contact Us</a>
+      </div>
     </div>
   );
 };
