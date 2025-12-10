@@ -1,0 +1,53 @@
+/* 1. The Container (The Capsule Border) */
+.swiper-pagination {
+  position: absolute;
+  bottom: 0px !important;
+  z-index: 10;
+
+  /* A. Sizing: Shrink width to fit the dots exactly */
+  width: fit-content !important;
+
+  /* B. Centering: Since width is not 100% anymore, we must center it manually */
+  left: 50% !important;
+  transform: translateX(-50%);
+
+  /* C. The Single Border Styling */
+  border: 1px solid black;
+  /* The border around ALL dots */
+  border-radius: 50px;
+  /* Makes the ends round (Pill shape) */
+  padding: 6px 12px;
+  /* Adds breathing room inside the border */
+  background-color: white;
+  /* (Optional) Background inside the pill */
+
+  /* D. Layout for dots */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2. The Individual Dots (Remove borders here) */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #d1d5db;
+  /* Gray */
+  opacity: 1;
+  margin: 0 4px !important;
+  /* Space between dots */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  /* IMPORTANT: No border here */
+  border: none;
+}
+
+/* 3. The Active Dot */
+.swiper-pagination-bullet-active {
+  background-color: #fbbf24;
+  /* Yellow */
+  width: 12px;
+  /* Optional: make active dot slightly bigger */
+  height: 12px;
+}
