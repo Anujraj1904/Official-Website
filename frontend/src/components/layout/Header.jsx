@@ -1,18 +1,47 @@
 import React, { useState, useEffect, useRef } from "react";
-// import { useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import { ImArrowUpRight2 } from "react-icons/im";
 import Logo from "/images/Crop_Main_Logo.png";
 
 const Header = () => {
-  // ... all your existing state, refs and effects unchanged ...
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(false);
   const [pagesOpenMobile, setPagesOpenMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
   const menuButtonRef = useRef(null);
   const panelRef = useRef(null);
+
+  // --- 1. SCROLL LOGIC ---
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // If any menu is OPEN, always show the navbar
+      if (mobileOpen || desktopMenuOpen) {
+        setVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Determine scroll direction
+      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+        // Scrolling DOWN -> Hide
+        setVisible(false);
+      } else {
+        // Scrolling UP -> Show
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mobileOpen, desktopMenuOpen]);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -37,9 +66,7 @@ const Header = () => {
     };
     const onEsc = (e) => {
       if (e.key === "Escape") {
-        setDesktopMenuOpen(false);
-        setMobileOpen(false);
-        setPagesOpenMobile(false);
+        closeAll();
       }
     };
     document.addEventListener("mousedown", onDocClick);
@@ -94,9 +121,12 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full bg-[#1c1c1c] z-50">
+      <header
+        className={`fixed top-0 left-0 w-full bg-[#1c1c1c] z-50 transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"
+          }`}
+      >
         <nav className="w-full">
-          <div className="container mx-auto px-4 py-4 flex items-center justify-between text-white">
+          <div className="container mx-auto px-4 pt-4 pb-2 flex items-center justify-between text-white">
             {/* LEFT: logo + main links */}
             <div className="flex items-center gap-8">
               <a href="/" aria-label="Homepage" className="flex items-center">
@@ -109,7 +139,9 @@ const Header = () => {
                     <a
                       href={item.link}
                       onClick={closeAll}
-                      className={`inline-block py-1 px-3 font-semibold ${currentPath === item.link ? "text-yellow-400" : "hover:text-yellow-400 text-gray-200"
+                      className={`inline-block py-1 px-3 font-semibold ${currentPath === item.link
+                        ? "text-yellow-400"
+                        : "hover:text-yellow-400 text-gray-200"
                         }`}
                     >
                       {item.title}
@@ -163,7 +195,7 @@ const Header = () => {
           />
         </nav>
 
-        {/* DESKTOP: fixed panel box (overlay) — appears outside navbar space, anchored top-right */}
+        {/* DESKTOP PANEL */}
         {isDesktop && desktopMenuOpen && (
           <div
             ref={panelRef}
@@ -171,7 +203,7 @@ const Header = () => {
             role="dialog"
             aria-modal="true"
           >
-            {/* Grid: pages | other items */}
+            {/* ... Menu Content ... */}
             <div className="grid grid-cols-2 gap-6 text-gray-200">
               <div>
                 <h3 className="text-sm font-semibold mb-3">Pages</h3>
@@ -215,7 +247,7 @@ const Header = () => {
           </div>
         )}
 
-        {/* MOBILE full sheet (unchanged) */}
+        {/* MOBILE MENU */}
         {mobileOpen && (
           <div
             className="md:hidden bg-[#1c1c1c] shadow-md border-t border-gray-800 z-40"
@@ -224,18 +256,12 @@ const Header = () => {
             <ul className="flex flex-col px-4 py-4 gap-1 text-gray-200">
               {mainFour.map((item) => (
                 <li key={item.id}>
-                  <a
-                    href={item.link}
-                    onClick={closeAll}
-                    className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
-                  >
+                  <a href={item.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">
                     {item.title}
                   </a>
                 </li>
               ))}
-
               <li className="mt-1 border-t border-gray-700" />
-
               <li>
                 <button
                   className="w-full flex items-center justify-between py-2 px-2 rounded hover:bg-gray-800 font-medium"
@@ -243,53 +269,33 @@ const Header = () => {
                   aria-expanded={pagesOpenMobile}
                 >
                   <span>Pages</span>
-                  <svg
-                    className={`w-5 h-5 transform transition-transform ${pagesOpenMobile ? "rotate-180" : "rotate-0"}`}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <svg className={`w-5 h-5 transform transition-transform ${pagesOpenMobile ? "rotate-180" : "rotate-0"}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </button>
-
                 {pagesOpenMobile && (
                   <ul className="mt-1 pl-4 flex flex-col gap-1">
                     {pages.map((p) => (
-                      <li key={p.id}>
-                        <a href={p.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">
-                          {p.title}
-                        </a>
-                      </li>
+                      <li key={p.id}><a href={p.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">{p.title}</a></li>
                     ))}
                   </ul>
                 )}
               </li>
-
               <li className="mt-1 border-t border-gray-700" />
-
               {otherItems.map((it) => (
-                <li key={it.id}>
-                  <a href={it.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">
-                    {it.title}
-                  </a>
-                </li>
+                <li key={it.id}><a href={it.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">{it.title}</a></li>
               ))}
-
               <li className="mt-3 px-4">
-                <a href="/start-project" onClick={closeAll} className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold">
-                  Start Project <ImArrowUpRight2 className="inline-block ml-2" />
-                </a>
+                <a href="/start-project" onClick={closeAll} className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold">Start Project <ImArrowUpRight2 className="inline-block ml-2" /></a>
               </li>
             </ul>
           </div>
         )}
       </header>
 
-      {/* ===== Spacer: prevents content from sitting under the fixed header =====
-          Adjust heights if you change header padding/logo size */}
-      <div aria-hidden className="h-16 md:h-20" />
+      {/* IMPORTANT: Since we made the header FIXED again, you might need a spacer 
+         in your layout to prevent content from hiding behind it.
+         Uncomment this if your Hero section gets cut off:
+      */}
+      {/* <div className="h-16 md:h-20" aria-hidden="true" /> */}
     </>
   );
 };

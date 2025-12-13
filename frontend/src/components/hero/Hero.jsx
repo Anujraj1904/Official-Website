@@ -23,13 +23,6 @@ const Hero = () => {
   return (
     <div className={styles.Hero}>
 
-      {/* Header */}
-      <div className="w-full h-64] flex items-center justify-center mb-12">
-        <h1 className="text-white text-4xl font-bold">
-          Our Services Stack
-        </h1>
-      </div>
-
       {/* STACK AREA */}
       <div className={styles.stackWrapper}>
         {cards.map((card, index) => {

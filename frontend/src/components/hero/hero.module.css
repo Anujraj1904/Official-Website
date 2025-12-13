@@ -1,8 +1,8 @@
 .topCard:hover {
-  transform: scale(1.05) translateY(-10px) !important;
+  transform: scale(1.05) translateY(-3px) !important;
   /* Override inline styles on hover */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  z-index: 50 !important;
+  z-index: 20 !important;
 }
 
 
@@ -30,6 +30,6 @@
 */
 
 .Hero {
-  background: #E09B34;
-  background: linear-gradient(186deg, rgba(224, 155, 52, 1) 0%, rgba(255, 255, 255, 1) 48%);
+  background: #E09D38;
+  background: linear-gradient(190deg, rgba(224, 157, 56, 1) 40%, rgba(255, 255, 255, 1) 63%)
 }

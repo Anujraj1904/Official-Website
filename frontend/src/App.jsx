@@ -7,6 +7,7 @@ import Footer from "./components/layout/Footer";
 
 // Page sections
 import Hero from "./components/hero/Hero";
+import Hero1 from "./components/hero/Hero1";
 import Featured from "./components/featured/featured";
 import ServicesPlan from "./components/servicesPlan/ServicesPlan";
 import PricingCards from "./components/pricing/PricingSection";
@@ -23,7 +24,9 @@ const App = () => {
       {/* Header */}
       <Header />
 
+
       {/* Hero Section */}
+      <Hero1 />
       <Hero />
 
       {/* Featured Work Section */}
