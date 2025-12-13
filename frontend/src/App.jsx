@@ -24,7 +24,7 @@ const App = () => {
       <Header />
 
       {/* Hero Section */}
-      {/* <Hero /> */}
+      <Hero />
 
       {/* Featured Work Section */}
       <Featured />

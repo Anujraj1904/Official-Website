@@ -1,0 +1,133 @@
+/* Updated Card Style */
+.cardContainer {
+  /* Crucial for stacking */
+  position: absolute;
+  width: 100%;
+  max-width: 1100px;
+  /* Limit width */
+  height: 550px;
+  /* Fixed height helps with uniform stacking */
+
+  /* Styling */
+  background-color: rgb(242, 242, 242);
+  /* Base color */
+  border-radius: 16px;
+  /* padding: top right bottom left; */
+  padding: 20px 20px 40px 20px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Flex layout */
+  display: flex;
+  flex-direction: column;
+
+  /* Animation Logic */
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+
+.highlightWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.tag {
+  /* background-color: rgba(252, 13, 13, 0.2); */
+  color: rgb(0, 0, 0);
+  /* padding: top right bottom left; */
+  padding: 36px 12px 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.main {
+  display: flex;
+  padding-left: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+
+}
+
+.image {
+  width: 25%;
+  height: 80%;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageStyle {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+.descriptionText {
+  color: #000000;
+  margin-bottom: 36px;
+  line-height: 1.2;
+  font-size: 2rem;
+  font-weight: 620;
+}
+
+.learnMoreButton {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #d3912f;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .stackWrapper {
+    height: 650px;
+    /* Taller on mobile to fit vertical content */
+  }
+
+  .cardContainer {
+    height: auto;
+    min-height: 400px;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 100%;
+    height: 200px;
+  }
+}
