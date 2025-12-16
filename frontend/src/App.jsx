@@ -19,7 +19,6 @@ import OurServices from "./components/ourServices/OurServices";
 
 const App = () => {
   return (
-    // <div className="font-sans bg-black text-white overflow-x-hidden">
     <div className="overflow-x-hidden">
       {/* Header */}
       <Header />

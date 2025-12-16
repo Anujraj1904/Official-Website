@@ -40,7 +40,7 @@ const Hero = () => {
           } else if (index === 1) {
             // Second Card
             style = {
-              top: '40px',
+              top: '30px',
               transform: 'scale(0.95)',
               zIndex: 3,
               opacity: 1,
@@ -48,7 +48,7 @@ const Hero = () => {
           } else if (index === 2) {
             // Third Card
             style = {
-              top: '20px',
+              top: '0px',
               transform: 'scale(0.90)',
               zIndex: 2,
               opacity: 1,

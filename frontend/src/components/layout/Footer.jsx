@@ -131,10 +131,10 @@ const Footer = () => {
           <div className="w-full md:w-auto md:mr-12">
             <h6 className="text-sm font-semibold text-white mb-3 text-center md:text-right">Our Socials</h6>
             <div className="grid grid-cols-2 gap-2 text-sm text-gray-300 justify-center md:justify-end">
-              <a href="https://instagram.com" className="hover:underline text-center md:text-right">Instagram</a>
+              <a href="https://www.instagram.com/tavcorp/" className="hover:underline text-center md:text-right">Instagram</a>
               <a href="https://tiktok.com" className="hover:underline text-center md:text-right">Tiktok</a>
-              <a href="https://twitter.com" className="hover:underline text-center md:text-right">Twitter/X</a>
-              <a href="https://linkedin.com" className="hover:underline text-center md:text-right">LinkedIn</a>
+              <a href="https://x.com/tavcorp_" className="hover:underline text-center md:text-right">Twitter/X</a>
+              <a href="https://www.linkedin.com/company/tavcorp/" className="hover:underline text-center md:text-right">LinkedIn</a>
             </div>
           </div>
         </div>
