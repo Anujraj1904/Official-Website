@@ -114,20 +114,40 @@
 @media (max-width: 768px) {
   .stackWrapper {
     height: 650px;
-    /* Taller on mobile to fit vertical content */
   }
 
   .cardContainer {
     height: auto;
     min-height: 400px;
+
+    /* 1. Adjust Outer Card Padding for Mobile */
+    /* top | right | bottom | left */
+    padding: 20px 16px 30px 16px;
   }
 
   .main {
     flex-direction: column;
+
+    /* 2. CRITICAL FIX: Reduce inner content padding */
+    /* On desktop this is 40px, which squishes text on mobile. Reduce to 20px or 15px. */
+    padding: 20px;
+    gap: 15px;
   }
 
   .image {
     width: 100%;
     height: 200px;
+  }
+
+  .description {
+    /* Reset padding for mobile since we are stacking vertically */
+    padding-top: 20px;
+    padding-left: 0;
+  }
+
+  .descriptionText {
+    font-size: 1.5rem;
+    /* Make text slightly smaller for mobile */
+    margin-bottom: 20px;
   }
 }
