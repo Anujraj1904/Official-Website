@@ -1,8 +1,8 @@
 /* FaqAccordion.module.css */
 
 .faqsContainer {
-  min-height: 100vh;
-  padding: 6rem 1rem;
+  /* min-height: 100vh; */
+  padding: 3rem 1rem;
   background-color: #0a0a0a;
   color: #f8fafc;
   font-family: sans-serif;
@@ -17,7 +17,7 @@
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .faqHeaderText span {
