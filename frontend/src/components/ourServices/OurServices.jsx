@@ -12,7 +12,7 @@ const OurServices = () => {
   const rowBaseClass = "flex items-end px-0 mb-8";
 
   // Styles for the H2 (Cut effect)
-  const headerClass = "text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-none overflow-hidden h-[0.75em] md:h-[0.8em]";
+  const headerClass = "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-none overflow-hidden h-[0.75em] md:h-[0.8em]";
 
 
   // Styles for the Right Column (Paragraph + Icon)
