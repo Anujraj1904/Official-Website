@@ -3,6 +3,8 @@ import { IoMegaphoneOutline } from "react-icons/io5";
 import { FaPencilRuler } from "react-icons/fa";
 import { IoRocketSharp } from "react-icons/io5";
 import { RiCodeSSlashLine, RiRobot3Line } from "react-icons/ri";
+import { MdKeyboardArrowRight } from "react-icons/md";
+
 import { IoIosArrowForward } from "react-icons/io";
 
 const OurServices = () => {
@@ -23,16 +25,35 @@ const OurServices = () => {
         
         {/* Header */}
         <div className="flex items-center justify-between mb-12 px-1 pb-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold">
-            Our <span className="text-amber-400 ml-4">Services</span>
+
+          {/* Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold whitespace-nowrap">
+            Our <span className="text-amber-400 ml-2 sm:ml-4">Services</span>
           </h1>
+
+          {/* Button */}
           <a
             href="#"
-            className="inline-flex items-center gap-2 border border-amber-400 text-amber-400 px-3 py-1.5 rounded-full hover:bg-amber-400 hover:text-black transition text-lg font-bold"
+            className="
+      inline-flex items-center justify-center
+      border border-amber-400 text-amber-400
+      rounded-full
+      px-3 py-2 sm:px-4 sm:py-1.5
+      hover:bg-amber-400 hover:text-black
+      transition font-bold
+    "
           >
-            See our Approach <IoIosArrowForward />
+            {/* Text → hidden on small screens */}
+            <span className="hidden sm:inline text-lg">
+              See our Approach
+            </span>
+
+            {/* Icon → always visible */}
+            <MdKeyboardArrowRight size={24} className="sm:ml-2" />
           </a>
+
         </div>
+
 
         {/* SERVICE ROWS */}
         <div className="space-y-8">
