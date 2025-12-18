@@ -25,7 +25,7 @@ const Featured = () => {
             <span className="text-black font-[650] text-3xl sm:text-4xl md:text-5xl">
               Featured
             </span>
-            <span className="text-yellow-400 ml-2 text-3xl sm:text-4xl md:text-5xl font-[600]">
+            <span className="font-caveat text-yellow-400 ml-2 text-3xl sm:text-4xl md:text-5xl font-[600]">
               Works
             </span>
           </h1>

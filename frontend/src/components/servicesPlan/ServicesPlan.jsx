@@ -9,7 +9,9 @@ const Services = () => {
 
         {/* Heading */}
         <h1 className="text-2xl sm:text-3xl font-bold">
-          Services <span className="text-yellow-400">Plans</span>
+          Services <span className="font-caveat text-yellow-400">
+            Plans
+          </span>
         </h1>
 
         {/* Button */}

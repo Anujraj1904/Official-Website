@@ -30,7 +30,8 @@ const OurServices = () => {
 
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold whitespace-nowrap">
-            Our <span className="text-amber-400 ml-2 sm:ml-4">Services</span>
+            Our<span className="font-caveat text-amber-400 "> Services
+            </span>
           </h1>
 
           {/* Button */}

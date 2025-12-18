@@ -12,7 +12,9 @@ const ArticlesSection = () => {
 
           {/* Heading */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-            Our <span className="text-yellow-400 font-pacifico">Articles</span>
+            Our <span className="font-caveat text-yellow-400">
+              Articles
+            </span>
           </h2>
 
           {/* Button */}

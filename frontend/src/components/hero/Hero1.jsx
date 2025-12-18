@@ -14,7 +14,7 @@ const Hero1 = () => {
           <div className={styles.left}>
             <span>Crafting,</span>
             <span>Brands and</span>
-            <span>Experiences</span>
+            <span className="font-caveat">Experiences</span>
           </div>
 
           <div className={styles.right}>

@@ -14,7 +14,9 @@ const FaqAccordion = () => {
     <div className={styles.faqsContainer}>
       <div className={styles.faqsWrapper}>
         <h1 className={styles.faqHeaderText}>
-          Ask us <span>Anything</span>
+          Ask us <span className="font-caveat text-yellow-400">
+            Anything
+          </span>
         </h1>
 
         <div className={styles.faqList}>
