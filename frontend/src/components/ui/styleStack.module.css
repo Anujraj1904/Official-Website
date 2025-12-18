@@ -22,7 +22,8 @@
   align-items: center;
   /* Crucial: prevents tags from overlapping text */
   flex-wrap: wrap;
-  gap: 10px;
+  /* gap: 10px; */
+  min-height: 60px;
 }
 
 .tag {

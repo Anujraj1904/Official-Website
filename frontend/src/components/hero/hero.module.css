@@ -7,8 +7,11 @@
   align-items: center;
   /* justify-content: center; */
   /* Adds padding so the stack never touches the top/bottom of the screen */
-  padding: 60px 0;
+  /* padding: 60px 0; */
+  padding: 40px 0;
   box-sizing: border-box;
+  /* overflow-x: hidden; */
+  /* Prevent horizontal scroll */
 }
 
 .stackWrapper {
@@ -19,9 +22,11 @@
   max-width: 1200px;
   /* Fixed height is dangerous; we reduce it for mobile */
   height: 600px;
+  /* height: clamp(450px, 80vh, 600px); */
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  /* padding-bottom: 50px; */
 }
 
 .topCard:hover {
@@ -33,7 +38,7 @@
 /* RESPONSIVE HEIGHTS */
 @media (max-width: 1024px) {
   .stackWrapper {
-    width: 98%;
+    width: 90%;
     height: 550px;
   }
 }
@@ -52,14 +57,14 @@
 @media (min-width: 1800px) {
   .stackWrapper {
     max-width: 1400px;
-    height: 700px;
+    height: 650px;
   }
 }
 
 
 @media (min-width: 2046px) {
   .stackWrapper {
-    max-width: 90%;
-    height: 580px;
+    max-width: 1600px;
+    height: 550px;
   }
 }
