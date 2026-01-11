@@ -1,7 +1,11 @@
 import { pricingPlans } from "../../data/pricingData";
 import PricingCard from "../ui/PricingCard";
+import { useNavigate } from "react-router-dom";
+
 
 const PricingSection = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="bg-black text-white py-12 sm:py-16 px-4 sm:px-6">
 
@@ -17,11 +21,17 @@ const PricingSection = () => {
         <p className="text-sm sm:text-base">
           Can't find your plan! Want to setup a tailor-plan for only you? 
         </p>
-        
-        <a 
+        <button
+          onClick={() => {
+            navigate("/contact");         
+          }}
+          className="text-yellow-400 underline text-sm sm:text-base"
+        >Contact Us</button>
+        {/* <a 
           href="/contact" className="text-yellow-400 underline text-sm sm:text-base"
-        >
-           Contact Us</a>
+        > */}
+          {/* <Link to="/contact">Contact Us</Link> */}
+        {/* </a> */}
       </div>
     </div>
   );

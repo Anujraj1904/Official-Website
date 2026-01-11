@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { ImArrowUpRight2 } from "react-icons/im";
 import Logo from "/images/Crop_Main_Logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(false);
   const [pagesOpenMobile, setPagesOpenMobile] = useState(false);
@@ -80,25 +82,25 @@ const Header = () => {
   }, [desktopMenuOpen]);
 
   const mainFour = [
-    { id: "home", title: "Home", link: "/" },
-    { id: "studio", title: "Studio", link: "/studio" },
-    { id: "work", title: "Work", link: "/work" },
-    { id: "news", title: "News", link: "/news" },
+    { id: "home", title: "Home", url: "/", active: true },
+    { id: "studio", title: "Studio", url: "/studio", active: true },
+    { id: "work", title: "Work", url: "/work", active: true },
+    { id: "news", title: "News", url: "/news", active: true },
   ];
 
   const otherItems = [
-    { id: "portfolio", title: "Portfolio", link: "/portfolio" },
-    { id: "blogs", title: "Blogs", link: "/blogs" },
-    { id: "contact", title: "ContactUS", link: "/contact" },
+    { id: "portfolio", title: "Portfolio", url: "/portfolio", active: true },
+    { id: "blogs", title: "Blogs", url: "/blogs", active: true },
+    { id: "contact", title: "ContactUS", url: "/contact", active: true },
   ];
 
   const pages = [
-    { id: "about", title: "About us", link: "/about" },
-    { id: "our-services", title: "Our Services", link: "/services" },
-    { id: "service-details", title: "Service Details", link: "/service-details" },
-    { id: "team", title: "Our Team", link: "/team" },
-    { id: "pricing", title: "Pricing", link: "/pricing" },
-    { id: "faqs", title: "FAQs", link: "/faqs" },
+    { id: "about", title: "About us", url: "/about", active: true },
+    { id: "our-services", title: "Our Services", url: "/services", active: true },
+    { id: "service-details", title: "Service Details", url: "/service-details", active: true },
+    { id: "team", title: "Our Team", url: "/team", active: true },
+    { id: "pricing", title: "Pricing", url: "/pricing", active: true },
+    { id: "faqs", title: "FAQs", url: "/faqs", active: true },
   ];
 
   const handleMenuToggle = () => {
@@ -134,31 +136,35 @@ const Header = () => {
               </a>
 
               <ul className="hidden md:flex items-center gap-3 text-gray-200">
-                {mainFour.map((item) => (
-                  <li key={item.id}>
-                    <a
-                      href={item.link}
-                      onClick={closeAll}
-                      className={`inline-block py-1 px-3 font-semibold ${currentPath === item.link
-                        ? "text-yellow-400"
-                        : "hover:text-yellow-400 text-gray-200"
-                        }`}
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
+                {mainFour.map((item) =>
+                  item.active ? (
+                    <li key={item.id}>
+                      <button
+                        onClick={() => { navigate(item.url) }}
+                        className={`inline-block py-1 px-3 font-semibold ${currentPath === item.url
+                          ? "text-yellow-400"
+                          : "hover:text-yellow-400 text-gray-200"
+                          }`}
+                      >
+                        {item.title}
+                      </button>
+                    </li>
+                  ) : null
+                )
+                }
               </ul>
             </div>
 
             {/* RIGHT: start project + menu */}
             <div className="flex items-center gap-6">
-              <a
-                href="/start-project"
+              <button
+                onClick={() => {
+                  navigate("/start-project");
+                }}
                 className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-gray-800"
               >
                 Start Project <ImArrowUpRight2 />
-              </a>
+              </button>
 
               <div className="relative">
                 <button
@@ -209,14 +215,16 @@ const Header = () => {
                 <h3 className="text-sm font-semibold mb-3">Pages</h3>
                 <div className="grid gap-1">
                   {pages.map((p) => (
-                    <a
+                    <button
                       key={p.id}
-                      href={p.link}
-                      onClick={() => setDesktopMenuOpen(false)}
-                      className="block py-2 px-2 rounded hover:bg-gray-800 text-sm"
+                      onClick={() => {
+                        navigate(p.url);
+                        setDesktopMenuOpen(false);
+                      }}
+                      className="block w-full text-left py-2 px-2 rounded hover:bg-gray-800 text-sm"
                     >
                       {p.title}
-                    </a>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -225,22 +233,29 @@ const Header = () => {
                 <h3 className="text-sm font-semibold mb-3">More</h3>
                 <div className="grid gap-1">
                   {otherItems.map((it) => (
-                    <a
+             
+                    <button
                       key={it.id}
-                      href={it.link}
-                      onClick={() => setDesktopMenuOpen(false)}
-                      className="block py-2 px-2 rounded hover:bg-gray-800 text-sm"
+                      onClick={() => {
+                        navigate(it.url);
+                        setDesktopMenuOpen(false);
+                      }}
+                      className="w-full text-left py-2 px-2 rounded hover:bg-gray-800 text-sm"
                     >
                       {it.title}
-                    </a>
+                    </button>
+
                   ))}
-                  <a
-                    href="/start-project"
-                    onClick={() => setDesktopMenuOpen(false)}
+                
+                  <button
+                    onClick={() => {
+                      navigate("/start-project");
+                      setDesktopMenuOpen(false);
+                    }}
                     className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded bg-[#111111] text-white font-semibold hover:bg-black"
                   >
                     Start Project <ImArrowUpRight2 />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -256,9 +271,15 @@ const Header = () => {
             <ul className="flex flex-col px-4 py-4 gap-1 text-gray-200">
               {mainFour.map((item) => (
                 <li key={item.id}>
-                  <a href={item.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">
+                  <button
+                    onClick={() => {
+                      navigate(item.url);
+                      closeAll();
+                    }}
+                    className="block w-full text-left py-2 px-2 rounded hover:bg-gray-800 font-medium"
+                  >
                     {item.title}
-                  </a>
+                  </button>
                 </li>
               ))}
               <li className="mt-1 border-t border-gray-700" />
@@ -274,27 +295,65 @@ const Header = () => {
                 {pagesOpenMobile && (
                   <ul className="mt-1 pl-4 flex flex-col gap-1">
                     {pages.map((p) => (
-                      <li key={p.id}><a href={p.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">{p.title}</a></li>
+                      <li key={p.id}>
+                        {/* <a href={p.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">{p.title}</a> */}
+                        <button
+                          onClick={() => {
+                            navigate(p.url);
+                            closeAll();
+                          }}
+                          className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
+                        >
+                          {p.title}
+                        </button>
+                      </li>
                     ))}
                   </ul>
                 )}
               </li>
               <li className="mt-1 border-t border-gray-700" />
               {otherItems.map((it) => (
-                <li key={it.id}><a href={it.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">{it.title}</a></li>
+                // <li key={it.id}>
+                //   <a href={it.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">{it.title}</a>
+                // </li>
+
+
+                <li key={it.id}>
+                  <button
+                    onClick={() => {
+                      navigate(it.url);
+                      closeAll();
+                    }}
+                    className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
+                  >
+                    {it.title}
+                  </button>
+                </li>
+
+
+
+
               ))}
               <li className="mt-3 px-4">
-                <a href="/start-project" onClick={closeAll} className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold">Start Project <ImArrowUpRight2 className="inline-block ml-2" /></a>
+                
+                <button
+                 onClick={() => {
+                  navigate("/start-project");
+                  closeAll();
+                 }}
+                  className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold"
+                  >
+                  Start Project <ImArrowUpRight2 className="inline-block ml-2" />
+                 </button>
+               
+                {/* <a href="/start-project" onClick={closeAll} className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold">Start Project <ImArrowUpRight2 className="inline-block ml-2" />
+                </a> */}
               </li>
             </ul>
           </div>
         )}
       </header>
 
-      {/* IMPORTANT: Since we made the header FIXED again, you might need a spacer 
-         in your layout to prevent content from hiding behind it.
-         Uncomment this if your Hero section gets cut off:
-      */}
       {/* <div className="h-16 md:h-20" aria-hidden="true" /> */}
     </>
   );
