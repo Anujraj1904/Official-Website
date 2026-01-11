@@ -95,10 +95,10 @@ const Header = () => {
   ];
 
   const pages = [
-    { id: "about", title: "About us", url: "/about", active: true },
+    { id: "about", title: "About us", url: "/aboutUs", active: true },
     { id: "our-services", title: "Our Services", url: "/services", active: true },
     { id: "service-details", title: "Service Details", url: "/service-details", active: true },
-    { id: "team", title: "Our Team", url: "/team", active: true },
+    { id: "team", title: "Our Team", url: "/our-team", active: true },
     { id: "pricing", title: "Pricing", url: "/pricing", active: true },
     { id: "faqs", title: "FAQs", url: "/faqs", active: true },
   ];
