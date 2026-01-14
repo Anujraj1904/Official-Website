@@ -4,77 +4,124 @@ const AboutUs = () => {
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            About Us
+            About Tavcorp
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            We are a digital-first studio focused on building high-quality web
-            and software products that solve real-world problems and help
-            businesses grow.
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            A creative and technology-driven studio building brands,
+            systems, and digital products that create lasting value.
           </p>
         </div>
 
-        {/* About Content */}
+        {/* Who We Are & What We Do */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
 
-          {/* Left Content */}
+          {/* Who We Are */}
           <div className="bg-white rounded-2xl shadow-md p-8">
             <h2 className="text-2xl font-semibold mb-4">
               Who We Are
             </h2>
             <p className="text-gray-600 mb-4">
-              Founded by passionate developers and designers, our team believes
-              in clean code, thoughtful design, and scalable solutions. We work
-              closely with clients to understand their vision and turn it into
-              reliable digital products.
+              Tavcorp is a creative and technology-driven studio based in Abuja,
+              Nigeria, founded on July 28th, 2023. We work at the intersection of
+              branding, design, and technology, helping businesses build strong
+              identities and digital products that create lasting value.
             </p>
             <p className="text-gray-600">
-              From startups to established businesses, we help teams build
-              modern applications that are fast, secure, and user-friendly.
+              Our work is rooted in clarity, strategy, and execution—ensuring
+              every solution we deliver serves a real business purpose.
             </p>
           </div>
 
-          {/* Right Content */}
+          {/* What We Do */}
           <div className="bg-white rounded-2xl shadow-md p-8">
             <h2 className="text-2xl font-semibold mb-4">
               What We Do
             </h2>
+            <p className="text-gray-600 mb-6">
+              We provide end-to-end creative and tech solutions tailored to
+              modern businesses.
+            </p>
+
             <ul className="space-y-3 text-gray-600">
-              <li>✅ Custom Web & Mobile Application Development</li>
-              <li>✅ UI/UX Design & Product Strategy</li>
-              <li>✅ Backend Systems & API Development</li>
-              <li>✅ Cloud Deployment & Performance Optimization</li>
-              <li>✅ Ongoing Maintenance & Support</li>
+              <li>• Branding and brand identity design</li>
+              <li>• Digital and product design</li>
+              <li>• Website design and development</li>
+              <li>• Automation and workflow solutions</li>
+              <li>• Coding and custom software development</li>
+              <li>• 3D design and visual experiences</li>
+              <li>• Consulting and digital product development</li>
             </ul>
+
+            <p className="text-gray-600 mt-6">
+              We focus on branding and digital product development, delivering
+              solutions that are functional, scalable, and visually compelling.
+            </p>
           </div>
 
         </div>
 
-        {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
-
-          {/* Mission */}
-          <div className="bg-black text-white rounded-2xl p-8">
-            <h3 className="text-2xl font-semibold mb-4">
-              Our Mission
-            </h3>
+        {/* Our Approach */}
+        <div className="mb-20">
+          <div className="bg-black text-white rounded-2xl p-10">
+            <h2 className="text-2xl font-semibold mb-4">
+              Our Approach
+            </h2>
+            <p className="text-gray-300 mb-4">
+              At Tavcorp, our goal isn’t just to make sales — it’s to build
+              customers and keep them satisfied. We believe strong design and
+              smart technology solve real business problems, elevate brand
+              value, and create meaningful customer experiences.
+            </p>
             <p className="text-gray-300">
-              To empower businesses and individuals by creating innovative,
-              scalable, and user-centric digital products that deliver real
-              value.
+              We don’t do guesswork. We identify design and system gaps, fix them
+              with clarity and precision, and deliver results that help
+              businesses grow with confidence.
             </p>
           </div>
+        </div>
 
-          {/* Vision */}
+        {/* Who We Work With */}
+        <div className="bg-white rounded-2xl shadow-md p-8 mb-20">
+          <h2 className="text-2xl font-semibold mb-4">
+            Who We Work With
+          </h2>
+          <p className="text-gray-600">
+            We work with all brands and customers—from startups to established
+            businesses—both locally and internationally. If you’re looking to
+            refine your brand, build a digital product, or solve design and
+            technology challenges, Tavcorp is built for you.
+          </p>
+        </div>
+
+        {/* Why Tavcorp */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+
           <div className="bg-white rounded-2xl shadow-md p-8">
+            <h2 className="text-2xl font-semibold mb-6">
+              Why Tavcorp
+            </h2>
+            <ul className="space-y-3 text-gray-600">
+              <li>• Professional yet creative execution</li>
+              <li>• Bold ideas backed by strategy and technology</li>
+              <li>• A warm, collaborative working process</li>
+              <li>• Focus on long-term value, not short-term wins</li>
+            </ul>
+          </div>
+
+          {/* CTA Card */}
+          <div className="bg-black text-white rounded-2xl p-8 flex flex-col justify-center">
             <h3 className="text-2xl font-semibold mb-4">
-              Our Vision
+              Let’s build something meaningful.
             </h3>
-            <p className="text-gray-600">
-              To become a trusted technology partner known for quality,
-              reliability, and long-term collaboration across industries.
+            <p className="text-gray-300 mb-6">
+              Work with Tavcorp and turn your ideas into impactful digital
+              products and experiences.
             </p>
+            <button className="bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-200 transition w-fit">
+              Work with Tavcorp
+            </button>
           </div>
 
         </div>
@@ -98,20 +145,6 @@ const AboutUs = () => {
             <p className="text-gray-600">Client Satisfaction</p>
           </div>
         </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">
-            Let’s build something great together
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Have an idea or a project in mind? We’d love to hear from you.
-          </p>
-          <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition mb-10">
-            Start a Project
-          </button>
-        </div>
-
       </div>
     </div>
   );
