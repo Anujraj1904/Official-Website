@@ -9,7 +9,7 @@ const AboutUs = () => {
             About Tavcorp
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            A creative and technology-driven studio building brands,
+            A creative and technology - driven studio building brands,
             systems, and digital products that create lasting value.
           </p>
         </div>
@@ -29,7 +29,7 @@ const AboutUs = () => {
               identities and digital products that create lasting value.
             </p>
             <p className="text-gray-600">
-              Our work is rooted in clarity, strategy, and execution—ensuring
+              Our work is rooted in clarity, strategy, and execution - ensuring
               every solution we deliver serves a real business purpose.
             </p>
           </div>
@@ -69,7 +69,7 @@ const AboutUs = () => {
               Our Approach
             </h2>
             <p className="text-gray-300 mb-4">
-              At Tavcorp, our goal isn’t just to make sales — it’s to build
+              At Tavcorp, our goal isn’t just to make sales - it’s to build
               customers and keep them satisfied. We believe strong design and
               smart technology solve real business problems, elevate brand
               value, and create meaningful customer experiences.
@@ -88,8 +88,8 @@ const AboutUs = () => {
             Who We Work With
           </h2>
           <p className="text-gray-600">
-            We work with all brands and customers—from startups to established
-            businesses—both locally and internationally. If you’re looking to
+            We work with all brands and customers - from startups to established
+            businesses - both locally and internationally. If you’re looking to
             refine your brand, build a digital product, or solve design and
             technology challenges, Tavcorp is built for you.
           </p>

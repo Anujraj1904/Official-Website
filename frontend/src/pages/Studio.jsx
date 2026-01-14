@@ -55,7 +55,7 @@ const Studio = () => {
             </h3>
             <p className="text-gray-600">
               Our environment encourages curiosity, experimentation, and
-              forward thinking—ensuring every project benefits from fresh
+              forward thinking - ensuring every project benefits from fresh
               perspectives and focused execution.
             </p>
           </div>
@@ -104,7 +104,7 @@ const Studio = () => {
                 Futuristic Design
               </h4>
               <p className="text-gray-600">
-                A studio space that reflects our forward-thinking mindset and
+                A studio space that reflects our forward - thinking mindset and
                 premium standards.
               </p>
             </div>
