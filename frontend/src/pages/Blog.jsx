@@ -1,118 +1,101 @@
-const blogs = [
+import React from "react";
+import styles from './styleBlog.module.css';
+
+
+const posts = [
   {
-    title: "How We Build Scalable Web Applications",
-    date: "January 10, 2026",
-    excerpt:
-      "Learn about our approach to building scalable, secure, and high-performance web applications using modern technologies.",
-    tags: ["Web Development", "Scalability", "Best Practices"],
+    id: 1,
+    title: "Why Strong Branding Is the Foundation of Business Growth",
+    content: [
+      "In today’s competitive digital landscape, branding is no longer just about a logo or color palette - it is the strategic backbone of how a business is perceived, remembered, and trusted. Strong branding shapes customer experience, builds credibility, and creates emotional connection, all of which directly impact long - term growth.",
+
+      "A well - defined brand helps businesses communicate clearly, stand out in crowded markets, and build loyalty with their audience. It aligns messaging, visuals, and digital presence so that every touchpoint feels intentional and consistent. Without this clarity, businesses risk being overlooked or misunderstood.",
+
+      "At Tavcorp, we believe that branding should solve real business problems, not just look good. When strategy, design, and storytelling work together, brands become more than visual identities - they become powerful business assets."
+    ],
+    points: [
+      "Define your brand before scaling your business",
+      "Prioritize consistency across all platforms",
+      "Align design with business objectives",
+      "Invest in long-term brand strategy, not quick fixes"
+    ]
   },
   {
-    title: "Why UI/UX Matters for Business Growth",
-    date: "December 22, 2025",
-    excerpt:
-      "Good design is more than aesthetics. Discover how user experience impacts customer trust, engagement, and conversions.",
-    tags: ["UI/UX", "Design", "Product"],
+    id: 2,
+    title: "How Smart Digital Products Can Transform Your Business",
+    content: [
+      "Digital products including websites, custom software, and automation tools are reshaping how businesses operate and serve customers. Companies that invest in smart digital solutions gain efficiency, scalability, and a competitive edge in an increasingly tech - driven world.",
+
+      "Modern businesses need more than static websites. They need interactive platforms, automated systems, and tailored software that streamline workflows, reduce human error, and enhance customer experience. The right digital product can turn complex processes into seamless operations.",
+
+      "At Tavcorp, we design and build digital products that don’t just function - they perform. From automation to custom software, our solutions are created with both users and businesses in mind, ensuring usability, reliability, and impact."
+    ],
+    points: [
+      "Are your systems slowing you down?",
+      "Can automation improve productivity?",
+      "Does your website truly represent your brand?",
+      "Is your software built for future growth?"
+    ]
   },
   {
-    title: "Choosing the Right Tech Stack for Your Startup",
-    date: "November 30, 2025",
-    excerpt:
-      "Selecting the right technologies early can save time and money. Here’s how we help startups choose the best tech stack.",
-    tags: ["Startups", "Tech Stack", "Strategy"],
-  },
-  {
-    title: "Improving Website Performance in 2026",
-    date: "November 5, 2025",
-    excerpt:
-      "Performance directly affects SEO and user experience. Learn simple techniques to speed up your website.",
-    tags: ["Performance", "SEO", "Optimization"],
-  },
+    id: 3,
+    title: "The Future of Design: Where Creativity Meets Technology",
+    content: [
+      "Design is evolving rapidly as technology continues to shape how brands communicate and interact with audiences. From 3D visuals to interactive experiences, businesses are moving beyond traditional design into immersive digital storytelling.",
+
+      "Modern design is no longer just aesthetic - it is functional, strategic, and experience - driven. Brands that embrace innovative design tools such as 3D modeling, motion graphics, and AI-assisted workflows can create deeper engagement and differentiation.",
+
+      "At Tavcorp, we blend creativity with technology to deliver forward - thinking visual solutions that feel premium, futuristic, and meaningful. We believe the future of design lies in collaboration between human imagination and digital innovation."
+    ],
+    points: [
+      "Minimal but impactful visuals",
+      "3D elements and motion design",
+      "Interactive web experiences",
+      "Technology - integrated branding"
+    ]
+  }
 ];
 
 const Blog = () => {
   return (
-    <div className="pt-24 min-h-screen w-full bg-gray-100 px-4 sm:px-8">
-      <div className="max-w-6xl mx-auto">
-
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Our Blog
-          </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            Insights, tutorials, and stories from our team on technology,
-            design, and building digital products.
+    <section className={styles.blogSection}>
+      <div className={styles.blogContainer}>
+        <header className={styles.blogHeader}>
+          <h1>Blog & Insights</h1>
+          <p>
+            Thoughts, strategies, and insights on branding, technology, and
+            digital innovation.
           </p>
-        </div>
+        </header>
 
-        {/* Featured Blog */}
-        <div className="bg-white rounded-2xl shadow-md p-8 mb-14">
-          <span className="text-sm text-gray-500">Featured Article</span>
-          <h2 className="text-2xl font-bold mt-2 mb-4">
-            The Future of Web Development
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Web development continues to evolve rapidly. In this article, we
-            explore trends like AI-powered tools, performance-first design, and
-            modern frameworks shaping the future of the web.
-          </p>
-          <button className="text-black font-medium hover:underline">
-            Read Full Article →
-          </button>
-        </div>
+        <div className={styles.blogGrid}>
+          {posts.map((post) => (
+            <article key={post.id} className={styles.blogCard}>
+              <div className={styles.blogCardContent}>
+                <h2>{post.title}</h2>
+                <p className={styles.blogDescription}>{post.description}</p>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          {blogs.map((blog, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition"
-            >
-              <span className="text-xs text-gray-500">{blog.date}</span>
-              <h3 className="text-xl font-semibold mt-2 mb-3">
-                {blog.title}
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {blog.excerpt}
-              </p>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {blog.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="text-xs bg-gray-100 px-2 py-1 rounded"
-                  >
-                    {tag}
-                  </span>
+                {post.content.map((text, index) => (
+                  <p key={index} className={styles.blogText}>
+                    {text}
+                  </p>
                 ))}
+
+                <ul className={styles.blogList}>
+                  {post.points.map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
+
+                <button className={styles.blogButton}>Contact Tavcorp</button>
               </div>
-
-              <button className="text-sm font-medium text-black hover:underline">
-                Read More →
-              </button>
-            </div>
+            </article>
           ))}
-
         </div>
-
-        {/* CTA */}
-        <div className="mt-20 text-center">
-          <h2 className="text-2xl font-semibold mb-4">
-            Want to learn more from us?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Subscribe to our blog and get the latest updates directly in your inbox.
-          </p>
-          <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition">
-            Subscribe
-          </button>
-        </div>
-
       </div>
-    </div>
+    </section>
   );
 };
+
 
 export default Blog;
