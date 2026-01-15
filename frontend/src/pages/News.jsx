@@ -16,18 +16,18 @@ const News = () => {
 
         {/* Featured News */}
         <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-12">
+          {/* 
           <div className="h-56 bg-gray-200 flex items-center justify-center">
             <span className="text-gray-500 text-lg">Featured Image</span>
           </div>
+          */}
           <div className="p-8">
-            <span className="text-sm text-gray-500">January 2026</span>
+            <span className="text-sm text-gray-500">July 2023</span>
             <h2 className="text-2xl font-bold mt-2 mb-4">
-              We’ve Launched Our New Platform 🚀
+              Tavcorp Officially Launches Its Creative & Tech Studio 🚀
             </h2>
             <p className="text-gray-600 mb-6">
-              Our team is excited to announce the launch of our new platform
-              designed to deliver faster performance, better user experience,
-              and improved scalability.
+              Tavcorp formally opened its creative studio in Abuja, marking the beginning of a new era in branding, design, and digital product development. The launch reflects the company’s commitment to helping businesses solve design and technology challenges through innovation, strategy, and craftsmanship. Tavcorp now serves brands locally and globally with integrated creative and technical solutions.
             </p>
             <button className="text-black font-medium hover:underline">
               Read Full Story →
@@ -40,13 +40,12 @@ const News = () => {
 
           {/* News Item */}
           <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-            <span className="text-xs text-gray-500">December 2025</span>
+            <span className="text-xs text-gray-500">Ongoing</span>
             <h3 className="text-xl font-semibold mt-2 mb-3">
-              Partnership with Tech Communities
+              Tavcorp Expands Its Digital Product Capabilities
             </h3>
             <p className="text-gray-600 text-sm mb-4">
-              We partnered with leading tech communities to support open-source
-              projects and encourage innovation.
+              Tavcorp continues to deepen its expertise in automation, custom software development, and website design, strengthening its position as a full-service creative and technology studio. The company is focused on building scalable digital products that improve business efficiency, customer experience, and long-term brand value.
             </p>
             <button className="text-sm font-medium text-black hover:underline">
               Read More →
@@ -55,13 +54,12 @@ const News = () => {
 
           {/* News Item */}
           <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-            <span className="text-xs text-gray-500">November 2025</span>
+            <span className="text-xs text-gray-500">Ongoing</span>
             <h3 className="text-xl font-semibold mt-2 mb-3">
-              Employee Task Manager v2.0 Released
+              Tavcorp Strengthens Its Collaborative Studio Model
             </h3>
             <p className="text-gray-600 text-sm mb-4">
-              The latest update introduces real-time task tracking, performance
-              analytics, and improved team collaboration features.
+              Built as both a creative space and tech hub, the Tavcorp studio is designed to foster collaboration, experimentation, and problem-solving. By combining an expert team with innovative processes, the studio supports brands from strategy to execution, ensuring every project is intentional, functional, and visually compelling.
             </p>
             <button className="text-sm font-medium text-black hover:underline">
               Read More →
@@ -69,7 +67,7 @@ const News = () => {
           </div>
 
           {/* News Item */}
-          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+          {/* <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
             <span className="text-xs text-gray-500">October 2025</span>
             <h3 className="text-xl font-semibold mt-2 mb-3">
               Awarded for Innovation in Web Development
@@ -81,10 +79,10 @@ const News = () => {
             <button className="text-sm font-medium text-black hover:underline">
               Read More →
             </button>
-          </div>
+          </div> */}
 
           {/* News Item */}
-          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+          {/* <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
             <span className="text-xs text-gray-500">September 2025</span>
             <h3 className="text-xl font-semibold mt-2 mb-3">
               Expanding Our Team 🎉
@@ -96,7 +94,7 @@ const News = () => {
             <button className="text-sm font-medium text-black hover:underline">
               Read More →
             </button>
-          </div>
+          </div> */}
 
         </div>
 
