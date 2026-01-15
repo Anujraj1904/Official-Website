@@ -87,7 +87,7 @@ const Blog = () => {
                   ))}
                 </ul>
 
-                <button className={styles.blogButton}>Contact Tavcorp</button>
+                {/* <button className={styles.blogButton}>Contact Tavcorp</button> */}
               </div>
             </article>
           ))}
