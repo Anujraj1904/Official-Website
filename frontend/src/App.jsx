@@ -14,6 +14,9 @@ import AboutUs from "./pages/AboutUs";
 import FAQs from "./pages/FAQs";
 import Blog from "./pages/Blog";
 import Portfolio from "./pages/Portfolio";
+import Terms from "./pages/term";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+
 
 
 const App = () => {
@@ -34,6 +37,8 @@ const App = () => {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
 
       <Footer />
