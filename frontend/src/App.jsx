@@ -16,6 +16,7 @@ import Blog from "./pages/Blog";
 import Portfolio from "./pages/Portfolio";
 import Terms from "./pages/term";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import OurServicesPricing from "./pages/OurSAP";
 
 
 
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/work" element={<Work />} />
         <Route path="/news" element={<News />} />
         <Route path="/start-project" element={<StartProject />} />
+        <Route path="/services-pricing" element={<OurServicesPricing />} />
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/faqs" element={<FAQs />} />

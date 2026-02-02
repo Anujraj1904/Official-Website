@@ -1,118 +1,168 @@
-const StartProject = () => {
+import { useState } from "react";
+
+export default function ProjectInquiryForm() {
+  const servicesList = [
+    "Branding & Brand Identity",
+    "Design",
+    "Website Development",
+    "Automation",
+    "Coding & Development",
+    "Custom Software Development",
+    "3D Design & Visualization",
+    "Digital Product Development",
+    "Consulting",
+    "Social Media Marketing",
+  ];
+
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    services: [],
+    description: "",
+    timeline: "",
+  });
+
+  const toggleService = (service) => {
+    setFormData((prev) => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter((s) => s !== service)
+        : [...prev.services, service],
+    }));
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+  };
+
   return (
-    <div className="pt-24 min-h-screen w-full bg-gray-100 px-4 sm:px-8">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6 mt-10 ">
+      <div className="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-8 space-y-8 mt-10">
 
         {/* Header */}
-        <div className="text-center mb-14">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Start Your Project
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Have an idea or a project in mind? Tell us about your goals and we’ll
-            help you turn it into a scalable, high-quality product.
+        <div>
+          <h1 className="text-3xl font-bold mb-2">Start Your Project</h1>
+          <p className="text-gray-600">We're excited to learn about your project.</p>
+          <p className="text-gray-600 mb-2">Whether you're building a brand, developing a digital product, or solving a complex business challenge, this is the first step toward working together.</p>
+          <p className="text-gray-600">
+            Tell us a bit about what you’re looking to create, and we’ll take it from there.
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        {/* Form */}
 
-          {/* Left: Info */}
-          <div className="bg-white rounded-2xl shadow-md p-8">
-            <h2 className="text-2xl font-semibold mb-4">
-              Why Work With Us?
-            </h2>
-            <ul className="space-y-4 text-gray-600">
-              <li>✅ Experienced full-stack development team</li>
-              <li>✅ Clean UI/UX & performance-focused code</li>
-              <li>✅ Transparent pricing & timelines</li>
-              <li>✅ Ongoing support after project delivery</li>
-            </ul>
+        <form onSubmit={handleSubmit} className="space-y-6">
+        
+          <span className="text-2xl font-bold">Project Inquiry Form</span>
 
-            <div className="mt-8">
-              <h3 className="text-lg font-semibold mb-2">
-                What We Build
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-gray-100 px-3 py-1 rounded text-sm">
-                  Web Apps
-                </span>
-                <span className="bg-gray-100 px-3 py-1 rounded text-sm">
-                  Mobile Apps
-                </span>
-                <span className="bg-gray-100 px-3 py-1 rounded text-sm">
-                  Company Websites
-                </span>
-                <span className="bg-gray-100 px-3 py-1 rounded text-sm">
-                  Admin Dashboards
-                </span>
-                <span className="bg-gray-100 px-3 py-1 rounded text-sm">
-                  SaaS Products
-                </span>
-              </div>
+          {/* Name & Company */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+              required
+            />
+
+            <input
+              type="text"
+              name="company"
+              placeholder="Company / Brand Name"
+              value={formData.company}
+              onChange={handleChange}
+              className="w-full border rounded-lg px-4 py-3"
+            />
+          </div>
+
+          {/* Email */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full border rounded-lg px-4 py-3"
+            required
+          />
+
+          {/* Services */}
+          <div>
+            <p className="font-medium mb-3">Service(s) Needed</p>
+            <div className="grid md:grid-cols-2 gap-3">
+              {servicesList.map((service) => (
+                <label
+                  key={service}
+                  className="flex items-center gap-2 text-sm cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    checked={formData.services.includes(service)}
+                    onChange={() => toggleService(service)}
+                    className="accent-black"
+                  />
+                  {service}
+                </label>
+              ))}
             </div>
           </div>
 
-          {/* Right: Form */}
-          <div className="bg-white rounded-2xl shadow-md p-8">
-            <h2 className="text-2xl font-semibold mb-6">
-              Project Details
-            </h2>
+          {/* Description */}
+          <textarea
+            name="description"
+            placeholder="Briefly describe your project, goals, and challenges"
+            value={formData.description}
+            onChange={handleChange}
+            rows={5}
+            className="w-full border rounded-lg px-4 py-3"
+          />
 
-            <form className="space-y-5">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
-              />
-
-              <input
-                type="text"
-                placeholder="Project Type (Web App, Website, etc.)"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
-              />
-
-              <textarea
-                rows="4"
-                placeholder="Briefly describe your project idea..."
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
-              ></textarea>
-
-              <select className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black">
-                <option>Estimated Budget</option>
-                <option>Below ₹50,000</option>
-                <option>₹50,000 – ₹1,00,000</option>
-                <option>₹1,00,000 – ₹3,00,000</option>
-                <option>Above ₹3,00,000</option>
-              </select>
-
-              <button
-                type="submit"
-                className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition"
-              >
-                Submit Project Request
-              </button>
-            </form>
+          {/* Timeline */}
+          <div>
+            <p className="font-medium mb-2">Timeline</p>
+            <select
+              name="timeline"
+              value={formData.timeline}
+              onChange={handleChange}
+              className="w-full border rounded-lg px-4 py-3"
+            >
+              <option value="">Select timeline</option>
+              <option value="ASAP">ASAP</option>
+              <option value="1–3 months">1–3 months</option>
+              <option value="3–6 months">3–6 months</option>
+              <option value="Flexible">Flexible / Not sure</option>
+            </select>
           </div>
 
-        </div>
+          {/* Submit */}
+          <button
+            type="submit"
+            className="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition"
+          >
+            Submit Project Inquiry
+          </button>
+        </form>
 
-        {/* Footer Note */}
-        <div className="mt-16 text-center text-gray-600 mb-10">
-          <p>
-            We usually respond within <span className="font-medium">24–48 hours</span>.
-          </p>
+        {/* Footer */}
+        <div className="text-sm text-gray-500 space-y-2">
+          <p className="font-medium">What Happens Next</p>
+          <ul className="list-disc list-inside">
+            <li>We’ll review your inquiry carefully</li>
+            <li>If we’re a good fit, we’ll reach out</li>
+            <li>Project scope, timelines, and pricing will be clarified</li>
+          </ul>
+          <p>We aim to respond within <strong>24–48 hours</strong>.</p>
         </div>
 
       </div>
     </div>
   );
-};
-
-export default StartProject;
+}
