@@ -119,7 +119,7 @@ const projects = [
     solution:
     "We designed a bold brand identity and cohesive packaging.",
     outcome:
-      "A memorable brand with eye-catching packaging design.",
+      "A recognizable brand with strong visual consistency.",
   }
 ];
 
