@@ -46,9 +46,15 @@ const Footer = () => {
 
             <p className="text-xs text-gray-500 mt-3 max-w-sm">
               By subscribing, you accept our{" "}
-              <a href="/privacy" className="underline text-gray-300">
+              <Link
+                to="/privacy"
+                className=" whitespace-nowrap underline text-gray-300"
+              >
                 Privacy Policy
-              </a>
+              </Link>
+              {/* <a href="/privacy" className="underline text-gray-300">
+                Privacy Policy
+              </a> */}
             </p>
           </div>
 
