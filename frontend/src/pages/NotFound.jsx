@@ -9,7 +9,7 @@ const NotFound = () => {
 
     const timer = setTimeout(() => {
       navigate("/");
-    }, 5000);
+    }, 50000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
@@ -17,7 +17,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-center px-6">
       <img
-        src="/images/404-illustration.svg"
+        src="/images/404-illustration.jpg"
         alt="Page not found"
         className="w-64 mb-6"
       />
