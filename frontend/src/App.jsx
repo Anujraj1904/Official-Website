@@ -17,6 +17,7 @@ import Portfolio from "./pages/Portfolio";
 import Terms from "./pages/term";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import OurServicesPricing from "./pages/OurSAP";
+import NotFound from "./pages/NotFound";
 
 
 
@@ -35,12 +36,15 @@ const App = () => {
         <Route path="/start-project" element={<StartProject />} />
         <Route path="/services-pricing" element={<OurServicesPricing />} />
         <Route path="/our-team" element={<OurTeam />} />
-        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
 
       <Footer />
