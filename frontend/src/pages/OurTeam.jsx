@@ -121,15 +121,15 @@
 
 const OurTeam = () => {
   return (
-    <section className="pt-28 pb-24 min-h-screen bg-gray-50 px-4 sm:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="pt-28 pb-24 min-h-screen px-4 sm:px-8" style={{ backgroundColor: "#ffffff", color: "#000000" }}>
+      <div className="mx-auto w-[95%] md:w-[70%]">
 
         {/* Header */}
         <div className="text-center mb-20">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-black mb-6" style={{ color: "#DF9931" }}>
             The Tavcorp Collective
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-700 max-w-3xl mx-auto text-lg leading-relaxed">
             At Tavcorp, our strength lies in a compact, multidisciplinary team of
             creative thinkers, technical experts, and problem-solvers. We work
             collaboratively to design meaningful brands and build intelligent
@@ -141,11 +141,11 @@ const OurTeam = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
           {/* Brand & Strategy */}
-          <div className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }}>
+            <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
               Brand & Strategy
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               This team shapes how businesses are seen, felt, and remembered.
               They define brand identities, craft clear messaging, and align
               visual direction with business objectives - building brands that are
@@ -154,11 +154,11 @@ const OurTeam = () => {
           </div>
 
           {/* Design */}
-          <div className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }}>
+            <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
               Design
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               Our designers transform ideas into compelling visual experiences.
               From brand identity to digital interfaces and 3D visuals, they
               blend creativity with functionality to produce work that is both
@@ -167,11 +167,11 @@ const OurTeam = () => {
           </div>
 
           {/* Technology & Development */}
-          <div className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }}>
+            <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
               Technology & Development
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               This team builds the systems behind great brands. They develop
               custom software, websites, and automation solutions that improve
               efficiency, scalability, and user experience - ensuring creativity
@@ -180,11 +180,11 @@ const OurTeam = () => {
           </div>
 
           {/* Innovation & Product */}
-          <div className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }}>
+            <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
               Innovation & Product
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               Focused on digital product development, this team explores new
               tools, processes, and technologies to keep Tavcorp ahead of
               industry trends - bridging creativity and engineering to deliver
@@ -196,7 +196,7 @@ const OurTeam = () => {
 
         {/* How We Work */}
         <div className="mt-24 text-center">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-10">
+          <h2 className="text-3xl font-semibold text-black mb-10" style={{ color: "#DF9931" }}>
             How We Work Together
           </h2>
 
@@ -221,12 +221,13 @@ const OurTeam = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition"
+                className="rounded-xl p-3 sm:p-6 shadow-sm hover:shadow-md transition"
+                style={{ backgroundColor: "#f5f5f5" }}
               >
-                <h4 className="font-semibold text-gray-900 mb-2">
+                <h4 className="font-semibold text-black mb-2" style={{ color: "#DF9931" }}>
                   {item.title}
                 </h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-700 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -236,14 +237,14 @@ const OurTeam = () => {
 
         {/* CTA */}
         <div className="mt-28 text-center">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
             Want to join the Tavcorp Collective?
           </h3>
-          <p className="text-gray-600 mb-8">
-            We’re always looking for sharp minds, creative thinkers, and builders
+          <p className="text-gray-700 mb-8">
+            We're always looking for sharp minds, creative thinkers, and builders
             who care about quality.
           </p>
-          <button className="bg-black text-white px-10 py-4 rounded-lg hover:bg-gray-800 transition">
+          <button className="bg-white text-black px-10 py-4 rounded-lg font-medium border border-black transition" style={{ hover: { backgroundColor: "#DF9931" } }} onMouseEnter={(e) => { e.target.style.backgroundColor = "#DF9931"; e.target.style.color = "white"; }} onMouseLeave={(e) => { e.target.style.backgroundColor = "white"; e.target.style.color = "black"; }}>
             View Careers
           </button>
         </div>

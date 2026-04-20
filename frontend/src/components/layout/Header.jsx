@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import { useAuth } from "../../store/auth";
 import { useAuthStore } from "../../store/authStore";
-import { mainFour, otherItems, pages } from "./HeaderData";
+import { mainFour, pages } from "./HeaderData";
 
 
 const Header = () => {
@@ -26,14 +26,14 @@ const Header = () => {
 
   // 
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen((prev) => !prev);
   };
 
   const handleLinkClick = () => {
-    setIsDropdownOpen(false);
+    setIsProfileDropdownOpen(false);
     closeAll(); // optional: also close menu
   };
 
@@ -162,9 +162,8 @@ const Header = () => {
             </div>
 
             {/* RIGHT: start project + menu */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 md:gap-4">
 
-              
               <button
                 onClick={() => {
                   navigate("/start-project");
@@ -173,6 +172,41 @@ const Header = () => {
               >
                 Start Project <ImArrowUpRight2 />
               </button>
+
+              {isAuthenticated && user?.username && (
+                <div className="relative">
+                  {/* Desktop: Show full name with white bg */}
+                  <button
+                    onClick={toggleProfileDropdown}
+                    className="hidden md:block px-4 py-2 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition"
+                  >
+                    <span>{user.username}</span>
+                  </button>
+                  {/* Mobile: Show initial in circle with white bg */}
+                  <button
+                    onClick={toggleProfileDropdown}
+                    className="md:hidden w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold text-lg hover:bg-gray-200 transition"
+                  >
+                    {user.username.charAt(0).toUpperCase()}
+                  </button>
+
+                  {/* Logout Dropdown */}
+                  {isProfileDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-red-600 rounded-md shadow-lg z-50">
+                      <button
+                        onClick={() => {
+                          logout();
+                          navigate("/");
+                          setIsProfileDropdownOpen(false);
+                        }}
+                        className="block px-4 py-3 text-white w-full text-left font-semibold hover:bg-red-700 rounded-md transition"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
 
               <div className="relative">
                 <button
@@ -209,7 +243,7 @@ const Header = () => {
             aria-modal="true"
           >
             {/* ... Menu Content ... */}
-            <div className="grid grid-cols-2 gap-6 text-gray-200">
+            <div className="text-gray-200">
               <div>
                 <h3 className="text-sm font-semibold mb-3">Pages</h3>
                 <div className="grid gap-1">
@@ -228,81 +262,25 @@ const Header = () => {
                 </div>
               </div>
 
-              <div>
-                <h3 className="text-sm font-semibold mb-3">More</h3>
-                <div className="grid gap-1">
-                  {otherItems.map((it) => (
-
-                    <button
-                      key={it.id}
-                      onClick={() => {
-                        navigate(it.url);
-                        setDesktopMenuOpen(false);
-                      }}
-                      className="w-full text-left py-2 px-2 rounded hover:bg-gray-800 text-sm"
-                    >
-                      {it.title}
-                    </button>
-
-                  ))}
-
-                  <button
-                    onClick={() => {
-                      navigate("/start-project");
-                      setDesktopMenuOpen(false);
-                    }}
-                    className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded bg-[#DF9931] text-[#1B1B1B] font-semibold hover:bg-[#E8A649]"
+              {/* Login/Signup for non-authenticated users */}
+              {!isAuthenticated && (
+                <div className="mt-6 border-t border-gray-700 pt-4">
+                  <Link
+                    to="/LoginPage"
+                    className="block py-2 px-2 rounded hover:bg-gray-800 hover:text-yellow-400 transition text-sm"
+                    onClick={() => setDesktopMenuOpen(false)}
                   >
-                    Start Project <ImArrowUpRight2 />
-                  </button>
-
-                  {/* User Authentication Menu */}
-                  {isAuthenticated ? (
-                    <div className="relative inline-block text-justify">
-                      <button
-                        onClick={toggleDropdown}
-                        className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
-                      >
-                        {user?.username}
-                      </button>
-
-                      {isDropdownOpen && (
-                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
-                          <button
-                            onClick={() => {
-                              logout();
-                              navigate("/");
-                              handleLinkClick();
-                            }}
-                            className="block px-3 py-1 text-gray-700 hover:bg-gray-100 w-full text-left"
-                          >
-                            Logout
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <>
-                      <Link
-                        to="/LoginPage"
-                        className="hidden md:block py-2 px-4 hover:text-yellow-400"
-                        onClick={handleLinkClick}
-                      >
-                        Login
-                      </Link>
-
-                      <Link
-                        to="/SignUpPage"
-                        className="hidden md:block py-2 px-4 hover:text-yellow-400"
-                        onClick={handleLinkClick}
-                      >
-                        Signup
-                      </Link>
-                    </>
-                  )}
-
+                    Login
+                  </Link>
+                  <Link
+                    to="/SignUpPage"
+                    className="block py-2 px-2 rounded hover:bg-gray-800 hover:text-yellow-400 transition text-sm"
+                    onClick={() => setDesktopMenuOpen(false)}
+                  >
+                    Signup
+                  </Link>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         )}
@@ -356,23 +334,6 @@ const Header = () => {
                   </ul>
                 )}
               </li>
-              <li className="mt-1 border-t border-gray-700" />
-              {otherItems.map((it) => (
-
-                <li key={it.id}>
-                  <button
-                    onClick={() => {
-                      navigate(it.url);
-                      closeAll();
-                    }}
-                    className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
-                  >
-                    {it.title}
-                  </button>
-                </li>
-
-
-              ))}
               {!isAuthenticated && (
                 <>
                   <li className="mt-1 border-t border-gray-700" />
